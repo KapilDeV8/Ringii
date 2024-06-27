@@ -25,6 +25,11 @@ const generateAccessAndRefreshTokens = async function (userId) {
     }
 }
  
+const getUser = asyncHandler2(async (req, res) => {
+    const {id} = req.params;
+    res.send(`Hi there, ${id}`)
+})
+
 const registerUser = asyncHandler2(async (req, res) => {
     //Get User Details from frontEnd
     const { fullName, email, userName, password } = req.body;
@@ -443,6 +448,7 @@ const getWatchHistory = asyncHandler2(async (req, res) => {
 
 
 export {
+    getUser,
     registerUser,
     logInUser,
     logOutUser,

@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { 
+    getUser,
     changeCurrentPassword,
     getCurrentUser,
     getUserChannelProfile,
@@ -29,6 +30,7 @@ router.route("/register").post(
     registerUser
 )
 
+router.route('/').get(getUser)
 router.route("/login").post(logInUser)
 // secured routes
 router.route("/logout").post(verifyJWT, logOutUser)
